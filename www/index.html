@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/index.css"/>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body class="green lighten-5">
+
+	<div class="navbar-fixed">
+		<nav class="nav-extended green">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo"></a>
+				<ul class="right">
+					<li class="nav-btn waves-effect waves-light">
+						<i class="share"></i>
+					</li>
+				</ul>
+			</div>
+			<div class="nav-content">
+				<div class="tabs-wrapper">
+					<div class="tab-trigger" id="tab1" data-target="#radio">Радио</div>
+					<div class="tab-trigger" id="tab2" data-target="#help">Помощь</div>
+					<span class="tab-active-bar"></span>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="tab-contents">
+		<div id="radio" class="tab-content col s12" hidden>
+			<ul class="collection">
+				<li class="collection-item avatar">
+					<div id="play" class="btn-floating btn-large waves-effect waves-light green">
+						<i class="play"></i>
+					</div>    
+					<div id="pause" class="btn-floating btn-large waves-effect waves-light green">
+						<i class="pause"></i>
+					</div>
+					<div id="activity" class="btn-floating btn-large waves-effect waves-light green">
+						<i class="spinner"></i>
+					</div>
+					<span class="title">Сейчас в эфире</span>
+					<div class="data-loading center-align">
+						<i class="spinner"></i>
+					</div>
+					<p id="current"></p>
+					<div class="progress">
+						<div class="indeterminate"></div>
+					</div>
+				</li>
+				<li class="collection-item avatar">
+					<span class="circle grey lighten-2">
+						<i class="next"></i>
+					</span>
+					<span class="title">Далее</span>
+					<div class="data-loading center-align">
+						<i class="spinner"></i>
+					</div>
+					<p id="next"></p>
+				</li>
+			</ul>
+		</div>
+		<div id="help" class="tab-content col s12" hidden>
+			<ul class="collection">
+				<li class="collection-item center-align">
+					<span class="title">Помощь</span>
+					<p class="justify-align">Дорогие братья и сестры, радио и газета «Радонеж» существуют исключительно благодаря вашей поддержке!</p>
+					<form class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="sum" type="number" class="validate">
+								<label for="sum">Введите сумму</label>
+							</div>
+							<a href="https://www.chronopay.com/" target="_blank" class="btn waves-effect waves-light green">Помочь</a>
+						</div>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<footer class="green darken-1 grey-text text-lighten-5">
+		<span id="copyYear"></span> © Радио «Радонеж»
+	</footer>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

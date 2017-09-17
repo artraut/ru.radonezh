@@ -1,0 +1,223 @@
+/*
+*   Icons
+*/
+i.share {
+    height: 24px;
+    width: 24px;
+    background: url(../img/share.svg) no-repeat;
+    margin: 5px 6px 5px 4px;
+}
+i.play {
+    height: 36px;
+    width: 36px;
+    background: url(../img/play.svg) no-repeat;
+}
+i.pause {
+    width: 36px;
+    height: 36px;
+    background: url(../img/pause.svg) no-repeat;
+}
+i.next {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: url(../img/next.svg) no-repeat;
+    margin: 12px;
+}
+i.spinner {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    background: url(../img/spinner.svg) no-repeat;
+    opacity: .5;
+    animation: spin 2s infinite linear;
+}
+.data-loading i.spinner {
+    background: url(../img/spinner-data.svg) no-repeat;
+    margin: 1.2rem 0 2rem;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+}
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+}
+}
+
+body {
+    background: url(../img/bg.svg);
+}
+
+.navbar-fixed {
+    height: 104px;
+}    
+
+.brand-logo {
+    width: 12rem;
+    height: 2.1rem;
+    display: inline-block;
+    margin: 1rem 0 !important;
+    background: url(../img/logo-radonezh-white.svg) no-repeat;
+}
+
+.nav-btn {
+    width: 34px;
+    height: 34px;
+    margin: 10px;
+    border-radius: 50%;
+}
+/*
+*   Tabs
+*/
+.tabs-wrapper {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.tabs-wrapper .tab-trigger {
+  text-transform: uppercase;
+  display: table-cell;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  height: 3rem;
+  width: 100%;
+}
+.tabs-wrapper .tab-active-bar {
+  position: absolute;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.tab-content {
+}
+/*
+*   Content
+*/
+.collection {
+    margin: 1rem;
+}
+.collection .collection-item {
+    background-color: rgba(255,255,255,.85);
+    padding-bottom: 1rem;
+}    
+.collection .collection-item .title {
+    font-size: 18px !important;
+    margin: .7rem 0 .75rem 0;
+    display: block;
+}    
+
+#radio .collection {    
+    border-top-left-radius: 29px;
+}
+#radio .collection .collection-item .btn-large {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 57px;
+    height: 57px;
+}
+#radio .collection .collection-item .btn-large i {
+    vertical-align: middle;
+} 
+
+#help .collection .collection-item p {
+    text-align: left; 
+}  
+#help .collection .collection-item .btn {
+    margin-bottom: .5rem;
+}
+
+
+
+
+.progress {
+    background-color: #a5d6a7;
+    margin: 1rem 0 .5rem 0;
+}    
+.progress .indeterminate {
+    background-color: #4caf50;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0.175rem 1rem;
+    width: 100%;
+    font-size: .85rem;
+    z-index: 99999;
+    text-align: center;
+}
+
+#play, #pause, .progress {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #toast-container {
+        min-width: 100%;
+        bottom: 1.5rem;
+        height: 3rem;
+        line-height: 3rem;
+    }
+    .toast {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 3rem;
+        min-height: 3rem;
+        background: rgba(0,0,0,.3);
+    }
+}
+
+
+/* label color */
+.input-field label {
+   color: #4CAF50 !important;
+}
+/* label focus color */
+.input-field input[type=number]:focus + label {
+   color: #4CAF50 !important;
+}
+/* label underline focus color */
+.input-field input[type=number]:focus {
+   border-bottom: 1px solid #4CAF50 !important;
+   box-shadow: 0 1px 0 0 #4CAF50 !important;
+}
+/* valid color */
+.input-field input[type=number].valid {
+   border-bottom: 1px solid #4CAF50 !important;
+   box-shadow: 0 1px 0 0 #4CAF50 !important;
+}
+/* invalid color */
+.input-field input[type=number].invalid {
+   border-bottom: 1px solid #4CAF50 !important;
+   box-shadow: 0 1px 0 0 #4CAF50 !important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+   color: #4CAF50 !important;
+}
