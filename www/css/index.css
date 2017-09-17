@@ -15,13 +15,13 @@
     height: 36px;
     width: 36px;
     background: url(../img/play.svg) no-repeat;
-    margin: 10.5px;
+    margin: 11px;
 }
 .pause {
     width: 36px;
     height: 36px;
     background: url(../img/pause.svg) no-repeat;
-    margin: 10.5px;
+    margin: 11px;
 }
 .next {
     width: 18px;
@@ -33,7 +33,7 @@
 .spinner {
     width: 36px;
     height: 36px;
-    margin: 10.5px;
+    margin: 11px;
     display: inline-block;
     background: url(../img/spinner.svg) no-repeat;
     opacity: .5;
@@ -141,20 +141,20 @@ body {
 
 #radio .collection {    
     border-top-left-radius: 29px;
-    -webkit-border-radius: 29px;
-    -moz-border-radius: 29px; 
+    -webkit-border-top-left-radius: 29px;
+    -moz-border-top-left-radius: 29px; 
 }
 #radio .collection .collection-item.player {    
     border-top-left-radius: 28px;
-    -webkit-border-radius: 28px;
-    -moz-border-radius: 28px; 
+    -webkit-border-top-left-radius: 28px;
+    -moz-border-top-left-radius: 28px; 
 }
 #radio .collection .collection-item .btn-large {
     position: absolute;
     left: 0;
     top: 0;
-    width: 57px;
-    height: 57px;
+    width: 58px;
+    height: 58px;
 }
 #radio .collection .collection-item .btn-large i {
     vertical-align: middle;

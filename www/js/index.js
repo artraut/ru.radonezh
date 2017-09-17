@@ -91,14 +91,14 @@ getData();
 var audio = new Audio(streamURL);
 var playing = false;
 
-audio.addEventListener("oncanplay", function () {
+audio.addEventListener("canplay", function () {
 	$('#play').show();
 	$('#pause').hide();
 	$('#activity').hide();
 	console.log (currentDate() + 'Stream can play');
 });
 
-audio.addEventListener("onplaying", function () {
+audio.addEventListener("playing", function () {
 	$('#play').hide();
 	$('#pause').show();
 	$('#activity').hide();
@@ -107,7 +107,7 @@ audio.addEventListener("onplaying", function () {
 	console.log (currentDate() + 'Stream playing...');
 });
 
-audio.addEventListener("onpause", function () {
+audio.addEventListener("pause", function () {
 	$('#play').show();
 	$('#pause').hide();
 	$('#activity').hide();
@@ -116,7 +116,7 @@ audio.addEventListener("onpause", function () {
 	console.log (currentDate() + 'Paused');
 });
 
-audio.addEventListener("onwaiting", function () {
+audio.addEventListener("waiting", function () {
 	$('#play').hide();
 	$('#pause').hide();
 	$('#activity').show();
@@ -124,7 +124,7 @@ audio.addEventListener("onwaiting", function () {
 	console.log (currentDate() + 'Buffering...');
 });
 
-audio.addEventListener("onerror", function () {
+audio.addEventListener("error", function () {
 	$('#play').hide();
 	$('#pause').hide();
 	$('#activity').show();
