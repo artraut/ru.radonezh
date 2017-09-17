@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 /*
 *   Icons
 */
@@ -29,6 +33,7 @@
 .spinner {
     width: 36px;
     height: 36px;
+    margin: 10.5px;
     display: inline-block;
     background: url(../img/spinner.svg) no-repeat;
     opacity: .5;
@@ -82,6 +87,8 @@ body {
     height: 34px;
     margin: 10px;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%; 
 }
 /*
 *   Tabs
@@ -134,6 +141,13 @@ body {
 
 #radio .collection {    
     border-top-left-radius: 29px;
+    -webkit-border-radius: 29px;
+    -moz-border-radius: 29px; 
+}
+#radio .collection .collection-item.player {    
+    border-top-left-radius: 28px;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px; 
 }
 #radio .collection .collection-item .btn-large {
     position: absolute;

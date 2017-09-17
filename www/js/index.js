@@ -3,7 +3,6 @@ $(document).ready(function(){
   $('.tab-trigger').on('click', function(){
     showTab($(this));
   });
-  
   function showTab(tab){
     var tabBar = tab.parent().find('.tab-active-bar');
     tabBar.animate({
@@ -13,10 +12,7 @@ $(document).ready(function(){
     $('.tab-content').fadeOut(150).promise().done(function(){
       $(tab.data('target')).fadeIn(150);
     });
-    
   }
-  
-  //showTab($('#tab1'));
   showTab($('[data-target="#radio"]'));
 });
 
@@ -95,40 +91,40 @@ getData();
 var audio = new Audio(streamURL);
 var playing = false;
 
-audio.oncanplay = function () {
+audio.addEventListener("oncanplay", function () {
 	$('#play').show();
 	$('#pause').hide();
 	$('#activity').hide();
 	console.log (currentDate() + 'Stream can play');
-}
+});
 
-audio.onplaying = function () {
+audio.addEventListener("onplaying", function () {
 	$('#play').hide();
 	$('#pause').show();
 	$('#activity').hide();
 	$('.progress').show();
 	playing = true;
 	console.log (currentDate() + 'Stream playing...');
-}
+});
 
-audio.onpause = function () {
+audio.addEventListener("onpause", function () {
 	$('#play').show();
 	$('#pause').hide();
 	$('#activity').hide();
 	$('.progress').hide();
 	playing = false;
 	console.log (currentDate() + 'Paused');
-}
+});
 
-audio.onwaiting = function () {
+audio.addEventListener("onwaiting", function () {
 	$('#play').hide();
 	$('#pause').hide();
 	$('#activity').show();
 	$('.progress').hide();
 	console.log (currentDate() + 'Buffering...');
-}
+});
 
-audio.onerror = function () {
+audio.addEventListener("onerror", function () {
 	$('#play').hide();
 	$('#pause').hide();
 	$('#activity').show();
@@ -142,9 +138,7 @@ audio.onerror = function () {
     	Materialize.toast('Ошибка сети. Перезапускаю вещание...', 5000);
     	audio.play();
 	}
-}
-
-//Materialize.toast('Ошибка сети. Перезапускаю вещание...', 500000);
+});
 
 $('#play').click( function() {
 	audio.play();
@@ -153,120 +147,3 @@ $('#play').click( function() {
 $('#pause').click( function() {
 	audio.pause();
 });
-
-/*
-$('#play').click( function() {
-	
-	audio.play();
-	
-	readyStateInterval = setInterval(function(){
-		if (audio.readyState <= 2) {
-			$('#play').hide();
-			$('#activity').show();
-		}	
-	}, 1000);
-
-	audio.onplay = function () {
-		$('#play').hide();
-		$('#stop').show();
-		$('#activity').hide();
-		$('.progress').show();
-		console.log ('Stream playing...')
-    }	
-});
-$('#stop').click( function() {
-	clearInterval(readyStateInterval);
-	audio.pause();
-	$('#stop').hide();
-	$('#play').show();
-	$('.progress').hide();
-});
-/*
-playButton = document.getElementById('playbutton');
-stopButton = document.getElementById('stopbutton');
-activityIndicator = document.getElementById('activityindicator');
-
-var playButton;
-var stopButton;
-var activityIndicator;
-
-function onError(error) 
-{
-    console.log(error.message);
-}
-
-function onConfirmRetry(button) {
-    if (button == 1) {
-        html5audio.play();
-    }
-}
-
-function pad2(number) {
-    return (number < 10 ? '0' : '') + number
-}
-
-var myaudioURL = 'http://icecast.radonezh.cdnvideo.ru:8000/rad';
-var myaudio = new Audio(myaudioURL);
-var isPlaying = false;
-var readyStateInterval = null;
-
-var html5audio = {
-    play: function()
-    {
-        isPlaying = true;
-        myaudio.play();
-
-        readyStateInterval = setInterval(function(){
-            if (myaudio.readyState <= 2) {
-                playButton.style.display = 'none';
-                activityIndicator.style.display = 'block';
-            }
-        },1000);
-        myaudio.addEventListener("error", function() {
-            console.log('myaudio ERROR');
-        }, false);
-        myaudio.addEventListener("canplay", function() {
-            console.log('myaudio CAN PLAY');
-        }, false);
-        myaudio.addEventListener("waiting", function() {
-            isPlaying = false;
-            playButton.style.display = 'none';
-            stopButton.style.display = 'none';
-            activityIndicator.style.display = 'block';
-        }, false);
-        myaudio.addEventListener("playing", function() {
-            isPlaying = true;
-            playButton.style.display = 'none';
-            activityIndicator.style.display = 'none';
-            stopButton.style.display = 'block';
-            $('.progress').show();
-        }, false);
-        myaudio.addEventListener("ended", function() {
-            html5audio.stop();
-            if (window.confirm('Streaming failed. Possibly due to a network error. Retry?')) {
-                onConfirmRetry();
-            }
-        }, false);
-    },
-    pause: function() {
-        isPlaying = false;
-        clearInterval(readyStateInterval);
-        myaudio.pause();
-        stopButton.style.display = 'none';
-        activityIndicator.style.display = 'none';
-        playButton.style.display = 'block';
-        $('.progress').hide();
-    },
-    stop: function() {
-        isPlaying = false;
-        clearInterval(readyStateInterval);
-        myaudio.pause();
-        stopButton.style.display = 'none';
-        activityIndicator.style.display = 'none';
-        playButton.style.display = 'block';
-        $('.progress').hide();
-        myaudio = null;
-        myaudio = new Audio(myaudioURL);
-    }
-};
-*/
